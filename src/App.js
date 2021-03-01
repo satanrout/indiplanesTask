@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/header";
+import Sidebar from "./components/sidebar";
+import styled from "styled-components";
+import Main from "./components/main";
+import RightSidebar from "./components/rightSidebar";
+import { MainProvider } from "./components/mainContext";
 
-function App() {
+const Contain = styled.div`
+  width: 100%; ;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <MainProvider>
+      <div className="d-flex ">
+        <aside className="position-fixed">
+          <Sidebar />
+        </aside>
+
+        <Contain className="px-2 middle">
+          <Header />
+          <Main />
+        </Contain>
+        <div
+          className="rightbar px-2"
+          style={{ minWidth: "250px", maxWidth: "250px" }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <RightSidebar />
+        </div>
+      </div>
+    </MainProvider>
   );
-}
+};
 
 export default App;

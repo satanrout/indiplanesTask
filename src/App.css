@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+.title {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.subtitle {
+  font-size: 0.6rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+thead tr td {
+  color: gray;
+  font-size: 0.7rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+tbody tr td {
+  font-size: 0.7rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.priority span {
+  background-color: #5291f0;
+  padding: 5px 10px;
+  border-radius: 50px;
+}
+
+td {
+  vertical-align: middle !important;
+}
+
+.middle {
+  background-color: #f7f8fc;
+}
+
+.main {
+  background-color: white;
+}
+
+.rightbar {
+  background-color: #eff0f8;
+}
+
+.righttitle span {
+  font-size: 0.9rem;
+}
+
+.nots p {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+.cardnots {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.nots span {
+  font-size: 0.6em;
+}
+
+.message-form {
+  gap: 15px;
+}
+
+.message-sec span {
+  background-color: #c4c4c4;
+  border-radius: 50%;
+  padding: 5px 9px;
+}
+
+.message-sec {
+  gap: 15px;
+}
+
+.message-icon div {
+  font-size: 0.7em;
+}
+
+.btncon button {
+  font-size: 0.7em;
+  height: 25px;
+  border: 1px solid #3751ff;
+  border-radius: 5px;
+  width: 60px;
+}
+
+.public {
+  background-color: #3751ff;
+}
+
+.private {
+  background-color: white;
+  margin-left: -8px;
+}
+
+.msgicon {
+  width: 15px;
+  height: 15px;
+}
+
+.msgicon div {
+  top: 5px;
+  left: 5px;
+  font-size: 0.6em;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.chat {
+  gap: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chat .name {
+  font-size: 0.8em;
+}
+
+.chat .new {
+  font-size: 0.6em;
+  color: #3751ff;
+}
+
+.chat .new span {
+  color: #7d7d7d;
+}
+
+.active .archive {
+  min-height: 400px;
+}
+
+thead td {
+  border-top: none !important;
+}
+
+.header-search {
+  left: 260px;
 }
