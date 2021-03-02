@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Main from "./components/main";
 import RightSidebar from "./components/rightSidebar";
 import { MainProvider } from "./components/mainContext";
+import { ChatProvider } from "./components/chatContext";
 
 const Contain = styled.div`
   width: 100%; ;
@@ -13,22 +14,24 @@ const Contain = styled.div`
 const App = () => {
   return (
     <MainProvider>
-      <div className="d-flex ">
-        <aside className="position-fixed">
-          <Sidebar />
-        </aside>
+      <ChatProvider>
+        <div className="d-flex ">
+          <aside className="position-fixed">
+            <Sidebar />
+          </aside>
 
-        <Contain className="px-2 middle">
-          <Header />
-          <Main />
-        </Contain>
-        <div
-          className="rightbar px-2"
-          style={{ minWidth: "250px", maxWidth: "250px" }}
-        >
-          <RightSidebar />
+          <Contain className="px-2 middle">
+            <Header />
+            <Main />
+          </Contain>
+          <div
+            className="rightbar  "
+            style={{ minWidth: "250px", maxWidth: "250px" }}
+          >
+            <RightSidebar />
+          </div>
         </div>
-      </div>
+      </ChatProvider>
     </MainProvider>
   );
 };

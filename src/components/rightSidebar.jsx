@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import old from "../assets/old.png";
+import { ChatContext } from "./chatContext";
+import ChatPerson from "./chatPerson";
 import Messages from "./messages";
 import Notification from "./notification";
 
 const RightSidebar = () => {
   const [rightSide, setRightSide] = useState("notification");
+
+  const { person } = useContext(ChatContext);
+  useEffect(() => {
+    if (person[0]?.id) {
+      setRightSide("person");
+    }
+  }, [person]);
 
   return (
     <>
@@ -12,7 +21,7 @@ const RightSidebar = () => {
         <span
           onClick={() => setRightSide("notification")}
           className={`w-50 py-3 text-center  ${
-            rightSide === "messages" ? "bg-dark text-light" : "text-primary"
+            rightSide !== "notification" ? "bg-dark text-light" : "text-primary"
           }`}
         >
           NOTIFICATIONS
@@ -30,7 +39,9 @@ const RightSidebar = () => {
         <Notification old={old} />
       ) : rightSide === "messages" ? (
         <Messages />
-      ) : null}
+      ) : (
+        <ChatPerson />
+      )}
     </>
   );
 };

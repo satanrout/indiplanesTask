@@ -2,7 +2,7 @@ import React from "react";
 
 const Notification = ({ old }) => {
   return (
-    <>
+    <div className="px-2">
       <strong>Quotations</strong>
 
       <div className="cardnots mt-2 d-flex p-1 align-items-center">
@@ -28,7 +28,7 @@ const Notification = ({ old }) => {
           <span>Feb 13th, 6:61 PM </span>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ChatContext } from "./chatContext";
 
 import { MessageData } from "../data/messagedata";
 
@@ -6,10 +7,18 @@ const MessageRow = ({ inputData }) => {
   const filterChat = MessageData.filter((chat) =>
     chat.name.toLowerCase().includes(inputData.toLowerCase())
   );
+
+  const { setPerson } = useContext(ChatContext);
+
   return (
     <>
       {filterChat.map((data) => (
         <div
+          onClick={() => {
+            setPerson(
+              MessageData.filter((message) => message?.id === data?.id)
+            );
+          }}
           key={data.id}
           className="border-bottom pb-2 d-flex justify-content-between align-items-center mt-3"
         >

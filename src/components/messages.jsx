@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import search1 from "../assets/search1.svg";
+
 import MessageRow from "./messageRow";
 
 const Messages = () => {
   const [inputData, setInputData] = useState("");
 
   return (
-    <>
+    <div className="px-2">
       <div className="message-form d-flex mt-2">
         <Form.Control
           onChange={(e) => setInputData(e.target.value)}
@@ -35,7 +36,7 @@ const Messages = () => {
       {/* chats row */}
 
       <MessageRow inputData={inputData} />
-    </>
+    </div>
   );
 };
 

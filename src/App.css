@@ -130,3 +130,64 @@ thead td {
 .header-search {
   left: 260px;
 }
+
+.pcl {
+  color: #868686;
+  font-size: 0.7rem;
+}
+
+.chatRow {
+  width: 75%;
+  height: 50px;
+  border-radius: 14px;
+  margin: 10px 5px;
+  font-size: 0.6rem;
+  color: #7d7d7d;
+  display: flex;
+  align-items: flex-end;
+}
+
+.chatRow p {
+  margin: 8px 10px;
+}
+
+.chatRow span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #868686;
+  margin: 3px;
+}
+
+.greyone {
+  background-color: #dde2ff;
+  justify-content: flex-end;
+}
+
+.blueone {
+  background-color: #6fe4be;
+  margin-left: auto;
+}
+
+.send {
+  bottom: 0px;
+  margin: 0 -0.5rem 0 -0.5rem;
+}
+
+.send input {
+  border: none;
+  background-color: #dde2ff;
+  height: 70px;
+  width: 170px;
+}
+
+.send div {
+  width: 100px;
+  height: 70px;
+  background-color: #29cc97;
+}
+
+.loading {
+  justify-content: center;
+  align-items: center;
+}
