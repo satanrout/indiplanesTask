@@ -9,16 +9,23 @@
 thead tr td {
   color: gray;
   font-size: 0.7rem;
+  text-align: center;
 }
 
 tbody tr td {
   font-size: 0.7rem;
 }
 
+.priority {
+  text-align: center;
+}
+
 .priority span {
   background-color: #5291f0;
   padding: 5px 10px;
   border-radius: 50px;
+
+  text-transform: uppercase;
 }
 
 td {
@@ -44,6 +51,7 @@ td {
 .nots p {
   font-size: 0.7rem;
   margin: 0;
+  font-weight: bold;
 }
 
 .cardnots {
@@ -190,4 +198,24 @@ thead td {
 .loading {
   justify-content: center;
   align-items: center;
+}
+
+.strongtitle {
+  color: #3751ff;
+  font-size: 0.8rem;
+}
+
+.notifications {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.nameblue {
+  color: #3751ff;
+  font-size: 1em !important;
+}
+
+.namegreen {
+  font-size: 1em !important;
+  color: #78b563;
 }
