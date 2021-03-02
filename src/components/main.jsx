@@ -4,6 +4,10 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import styled from "styled-components";
 import Tables from "../components/table";
+import private1 from "../assets/private1.svg";
+import public1 from "../assets/public1.svg";
+import sort from "../assets/sort.svg";
+import filter from "../assets/filter.svg";
 
 const Btncon = styled.div`
   top: 0;
@@ -28,7 +32,7 @@ const Main = () => {
   const { small } = useContext(MainContext);
   return (
     <div
-      style={{ marginLeft: !small ? "250px" : "50px" }}
+      style={{ marginLeft: small ? "230px" : "50px" }}
       className="main position-relative mt-5"
     >
       <Tabs
@@ -39,10 +43,22 @@ const Main = () => {
         <Tab className="border border-top-0" eventKey="home" title="All RFQs">
           <div className="table-container">
             <Topcard className="small-top">
-              <span className="top mx-2">Private</span>
-              <span className="top mx-2">Public</span>
-              <span className="top mx-2">Sort</span>
-              <span className="top mx-2">Filter</span>
+              <span className="top mx-2">
+                <img src={private1} alt="private" height="8px" width="8px" />{" "}
+                Private
+              </span>
+              <span className="top mx-2">
+                <img src={public1} alt="public" height="8px" width="8px" />
+                Public
+              </span>
+              <span className="top mx-2">
+                <img src={sort} alt="sort" height="8px" width="8px" />
+                Sort
+              </span>
+              <span className="top mx-2">
+                <img src={filter} alt="filter" height="8px" width="8px" />
+                Filter
+              </span>
             </Topcard>
             <Tables />
           </div>

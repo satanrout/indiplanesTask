@@ -219,3 +219,22 @@ thead td {
   font-size: 1em !important;
   color: #78b563;
 }
+
+.child {
+  margin-left: 75px;
+}
+
+td:not(:first-child) {
+  text-align: center;
+}
+
+.top img {
+  vertical-align: baseline;
+  margin-right: 3px;
+}
+
+.topicon {
+  width: 16px;
+  height: 16px;
+  background-color: #dd22bf;
+}

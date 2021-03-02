@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <>
       <div
-        style={{ marginLeft: !small ? "250px" : "50px" }}
+        style={{ marginLeft: small ? "230px" : "50px" }}
         className="d-flex px-3 justify-content-between align-items-center"
       >
         <strong className="fs-4">RFQs</strong>

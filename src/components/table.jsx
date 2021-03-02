@@ -2,6 +2,9 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import "bootstrap/js/src/collapse.js";
 import "../App.css";
+import bolt from "../assets/bolt.svg";
+import clamp from "../assets/clamp.svg";
+import coupling from "../assets/coupling.svg";
 
 const Tables = () => {
   return (
@@ -59,8 +62,15 @@ const Tables = () => {
             <td></td>
           </tr>
 
-          <tr className="collapse multi-collapse1" id="multiCollapseExample1">
-            <td className="d-flex align-items-center">
+          <tr className=" collapse multi-collapse1" id="multiCollapseExample1">
+            <td className="d-flex child align-items-center">
+              <img
+                className="mr-2"
+                src={coupling}
+                alt="coupling"
+                width="15px"
+                height="15px"
+              />
               <div
                 style={{
                   backgroundColor: "#F28D8D",
@@ -75,16 +85,14 @@ const Tables = () => {
                 C
               </div>
               <div>
-                <div className="title">Coupling, Clamp Assy, Bolt</div>
-                <div className="subtitle">
-                  Created 2.5 months ago, 10.12.2020
-                </div>
+                <div className=" title">Coupling</div>
+                <div className="subtitle"></div>
               </div>
             </td>
-            <td>RR37100D</td>
-            <td>S270T252-7</td>
+            <td>VR1029-400</td>
+            <td>CFM56-7</td>
             <td>Others</td>
-            <td>6</td>
+            <td>5</td>
             <td></td>
             <td></td>
             <td>
@@ -94,7 +102,14 @@ const Tables = () => {
           </tr>
 
           <tr className="collapse multi-collapse1" id="multiCollapseExample1">
-            <td className="d-flex align-items-center">
+            <td className="d-flex child align-items-center">
+              <img
+                className="mr-2"
+                src={clamp}
+                alt="clamp"
+                width="15px"
+                height="15px"
+              />
               <div
                 style={{
                   backgroundColor: "#F28D8D",
@@ -109,16 +124,14 @@ const Tables = () => {
                 C
               </div>
               <div>
-                <div className="title">Coupling, Clamp Assy, Bolt</div>
-                <div className="subtitle">
-                  Created 2.5 months ago, 10.12.2020
-                </div>
+                <div className="title">Clamp Assy</div>
+                <div className="subtitle"></div>
               </div>
             </td>
-            <td>RR37100D</td>
-            <td>S270T252-7</td>
+            <td>VR1025-350</td>
+            <td>CFM56-7</td>
             <td>Others</td>
-            <td>6</td>
+            <td>5</td>
             <td></td>
             <td></td>
             <td>
@@ -128,7 +141,14 @@ const Tables = () => {
           </tr>
 
           <tr className="collapse multi-collapse1" id="multiCollapseExample1">
-            <td className="d-flex align-items-center">
+            <td className="d-flex child align-items-center">
+              <img
+                className="mr-2"
+                src={bolt}
+                alt="bolt"
+                width="15px"
+                height="15px"
+              />
               <div
                 style={{
                   backgroundColor: "#F28D8D",
@@ -143,16 +163,14 @@ const Tables = () => {
                 C
               </div>
               <div>
-                <div className="title">Coupling, Clamp Assy, Bolt</div>
-                <div className="subtitle">
-                  Created 2.5 months ago, 10.12.2020
-                </div>
+                <div className="title">Bolt</div>
+                <div className="subtitle"></div>
               </div>
             </td>
-            <td>RR37100D</td>
-            <td>S270T252-7</td>
+            <td>ST1420-08</td>
+            <td>PW4000</td>
             <td>Others</td>
-            <td>6</td>
+            <td>7</td>
             <td></td>
             <td></td>
             <td>

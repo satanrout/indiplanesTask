@@ -20,7 +20,7 @@ const RightSidebar = () => {
       <div className="d-flex righttitle">
         <span
           onClick={() => setRightSide("notification")}
-          className={`w-50 py-3 text-center  ${
+          className={`w-50 py-3 text-center font-weight-bold  ${
             rightSide !== "notification" ? "bg-dark text-light" : "text-primary"
           }`}
         >
@@ -28,7 +28,7 @@ const RightSidebar = () => {
         </span>
         <span
           onClick={() => setRightSide("messages")}
-          className={`w-50 py-3 text-center ${
+          className={`w-50 py-3 text-center font-weight-bold ${
             rightSide === "notification" ? "bg-dark text-light" : "text-primary"
           }`}
         >

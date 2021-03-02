@@ -11,7 +11,7 @@ import toggle from "../assets/toggle.svg";
 
 const StyledCol = styled(Col)`
   span {
-    display: ${(p) => (p.compact ? "none" : null)};
+    display: ${(p) => (!p.compact ? "none" : null)};
   }
 `;
 
@@ -25,7 +25,7 @@ const Sidebar = (props) => {
       <Col
         style={{
           color: "#A4A6B3",
-          width: compact ? "50px" : "250px",
+          width: !compact ? "50px" : "230px",
           transition: "ease-in .1s",
           zIndex: 2,
         }}
