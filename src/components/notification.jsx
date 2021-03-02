@@ -1,5 +1,10 @@
 import React from "react";
 
+import jacob from "../assets/jacob.png";
+import leslie from "../assets/leslie.png";
+import bluep from "../assets/bluep.svg";
+import greenp from "../assets/greenp.svg";
+
 const Notification = ({ old }) => {
   return (
     <>
@@ -18,7 +23,7 @@ const Notification = ({ old }) => {
         </div>
 
         <div className="cardnots mt-2 d-flex p-1 align-items-center">
-          <img src={old} width="35px" height="35px" alt="old woman" />
+          <img src={jacob} width="35px" height="35px" alt="old woman" />
           <div className="nots pl-2">
             <p>
               <span className="nameblue">Vendor Jacob Jones</span> has edited
@@ -33,7 +38,7 @@ const Notification = ({ old }) => {
         <strong className="strongtitle">Points</strong>
 
         <div className="cardnots mt-2 d-flex p-1 align-items-center">
-          <img src={old} width="35px" height="35px" alt="old woman" />
+          <img src={bluep} width="35px" height="35px" alt="old woman" />
           <div className="nots pl-2">
             <p>
               You have received <span className="nameblue">Blue Points</span>{" "}
@@ -44,7 +49,7 @@ const Notification = ({ old }) => {
         </div>
 
         <div className="cardnots mt-2 d-flex p-1 align-items-center">
-          <img src={old} width="35px" height="35px" alt="old woman" />
+          <img src={greenp} width="35px" height="35px" alt="old woman" />
           <div className="nots pl-2">
             <p>
               You have received <span className="namegreen">Green Points</span>{" "}
@@ -59,7 +64,7 @@ const Notification = ({ old }) => {
         <strong className="strongtitle">Deadlines Reached</strong>
 
         <div className="cardnots mt-2 d-flex p-1 align-items-center">
-          <img src={old} width="35px" height="35px" alt="old woman" />
+          <img src={jacob} width="35px" height="35px" alt="old woman" />
           <div className="nots pl-2">
             <p>
               <span className="nameblue">Operator Jacob Jones</span> has closed
@@ -70,7 +75,7 @@ const Notification = ({ old }) => {
         </div>
 
         <div className="cardnots mt-2 d-flex p-1 align-items-center">
-          <img src={old} width="35px" height="35px" alt="old woman" />
+          <img src={leslie} width="35px" height="35px" alt="old woman" />
           <div className="nots pl-2">
             <p>
               <span className="nameblue">Operator Leslie Alexander</span> has

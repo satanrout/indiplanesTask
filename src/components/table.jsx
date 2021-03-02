@@ -112,7 +112,7 @@ const Tables = () => {
               />
               <div
                 style={{
-                  backgroundColor: "#F28D8D",
+                  backgroundColor: "#008DC8",
                   padding: "0 10px",
                   borderRadius: "50%",
                   color: "white",
@@ -151,7 +151,7 @@ const Tables = () => {
               />
               <div
                 style={{
-                  backgroundColor: "#F28D8D",
+                  backgroundColor: "#A1F9A9",
                   padding: "0 10px",
                   borderRadius: "50%",
                   color: "white",
@@ -160,7 +160,7 @@ const Tables = () => {
                 }}
                 className="c"
               >
-                C
+                B
               </div>
               <div>
                 <div className="title">Bolt</div>
@@ -183,7 +183,7 @@ const Tables = () => {
             <td className="d-flex align-items-center">
               <div
                 style={{
-                  backgroundColor: "#F28D8D",
+                  backgroundColor: "#F1E25C",
                   padding: "0 10px",
                   borderRadius: "50%",
                   color: "white",
@@ -192,7 +192,7 @@ const Tables = () => {
                 }}
                 className="c"
               >
-                C
+                B
               </div>
               <div>
                 <div className="title">Bracket</div>
@@ -214,7 +214,7 @@ const Tables = () => {
             <td className="d-flex align-items-center">
               <div
                 style={{
-                  backgroundColor: "#F28D8D",
+                  backgroundColor: "#A1DFF9",
                   padding: "0 10px",
                   borderRadius: "50%",
                   color: "white",
@@ -223,7 +223,7 @@ const Tables = () => {
                 }}
                 className="c"
               >
-                C
+                P
               </div>
               <div>
                 <div className="title">Hydraulic Check Valve</div>
@@ -245,7 +245,7 @@ const Tables = () => {
             <td className="d-flex align-items-center">
               <div
                 style={{
-                  backgroundColor: "#F28D8D",
+                  backgroundColor: "#A1DFF9",
                   padding: "0 10px",
                   borderRadius: "50%",
                   color: "white",
@@ -254,7 +254,7 @@ const Tables = () => {
                 }}
                 className="c"
               >
-                C
+                P
               </div>
               <div>
                 <div className="title">Sensor, Temp Oil</div>
@@ -276,7 +276,7 @@ const Tables = () => {
             <td className="d-flex align-items-center">
               <div
                 style={{
-                  backgroundColor: "#F28D8D",
+                  backgroundColor: "#A1DFF9",
                   padding: "0 10px",
                   borderRadius: "50%",
                   color: "white",
@@ -285,7 +285,7 @@ const Tables = () => {
                 }}
                 className="c"
               >
-                C
+                P
               </div>
               <div>
                 <div className="title">Sensor, Temp Oil</div>
@@ -307,7 +307,7 @@ const Tables = () => {
             <td className="d-flex align-items-center">
               <div
                 style={{
-                  backgroundColor: "#F28D8D",
+                  backgroundColor: "#A1DFF9",
                   padding: "0 10px",
                   borderRadius: "50%",
                   color: "white",
@@ -316,7 +316,7 @@ const Tables = () => {
                 }}
                 className="c"
               >
-                C
+                P
               </div>
               <div>
                 <div className="title">Sensor, Temp Oil</div>
