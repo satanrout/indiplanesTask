@@ -6,7 +6,8 @@ import bolt from "../assets/bolt.svg";
 import clamp from "../assets/clamp.svg";
 import coupling from "../assets/coupling.svg";
 
-const Tables = () => {
+const Tables = ({ data }) => {
+  const milsec = new Date() - new Date(data?.data?.[6]?.create_date);
   return (
     <>
       <Table>
@@ -14,7 +15,6 @@ const Tables = () => {
           <tr>
             <td>RFQ details</td>
             <td>Part Number</td>
-            <td>Engine Number</td>
             <td>Manufacturer</td>
             <td>Quantity</td>
             <td>Target Date</td>
@@ -46,16 +46,31 @@ const Tables = () => {
               <div>
                 <div className="title">Coupling, Clamp Assy, Bolt</div>
                 <div className="subtitle">
-                  Created 2.5 months ago, 10.12.2020
+                  {`Created ${Math.round(
+                    milsec / 86400000
+                  )} days ago, ${new Date(
+                    data?.data?.[0]?.create_date
+                  ).toLocaleDateString()}`}
                 </div>
               </div>
             </td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td>Apr 29, 2021</td>
-            <td>Feb 15, 2021</td>
+            <td>
+              {new Date(data?.data?.[0]?.targetdate)
+                .toDateString()
+                .split(" ")
+                .slice(1)
+                .join(" ")}
+            </td>
+            <td>
+              {new Date(data?.data?.[0]?.deadline)
+                .toDateString()
+                .split(" ")
+                .slice(1)
+                .join(" ")}
+            </td>
             <td className="priority">
               <span style={{ backgroundColor: "#29CC97" }}>normal</span>
             </td>
@@ -85,14 +100,16 @@ const Tables = () => {
                 C
               </div>
               <div>
-                <div className=" title">Coupling</div>
+                <div className=" title">
+                  {data?.data?.[0]?.component_set?.[0]?.component_name}
+                </div>
                 <div className="subtitle"></div>
               </div>
             </td>
-            <td>VR1029-400</td>
-            <td>CFM56-7</td>
-            <td>Others</td>
-            <td>5</td>
+            <td>{data?.data?.[0]?.component_set?.[0]?.number}</td>
+
+            <td>{data?.data?.[0]?.component_set?.[0]?.manufacturer}</td>
+            <td>{data?.data?.[0]?.component_set?.[0]?.quantity}</td>
             <td></td>
             <td></td>
             <td>
@@ -124,14 +141,16 @@ const Tables = () => {
                 C
               </div>
               <div>
-                <div className="title">Clamp Assy</div>
+                <div className="title">
+                  {data?.data?.[0]?.component_set?.[1]?.component_name}
+                </div>
                 <div className="subtitle"></div>
               </div>
             </td>
-            <td>VR1025-350</td>
-            <td>CFM56-7</td>
-            <td>Others</td>
-            <td>5</td>
+            <td>{data?.data?.[0]?.component_set?.[1]?.number}</td>
+
+            <td>{data?.data?.[0]?.component_set?.[1]?.manufacturer}</td>
+            <td>{data?.data?.[0]?.component_set?.[1]?.quantity}</td>
             <td></td>
             <td></td>
             <td>
@@ -163,14 +182,15 @@ const Tables = () => {
                 B
               </div>
               <div>
-                <div className="title">Bolt</div>
+                <div className="title">
+                  {data?.data?.[0]?.component_set?.[2]?.component_name}
+                </div>
                 <div className="subtitle"></div>
               </div>
             </td>
-            <td>ST1420-08</td>
-            <td>PW4000</td>
-            <td>Others</td>
-            <td>7</td>
+            <td>{data?.data?.[0]?.component_set?.[2]?.number}</td>
+            <td>{data?.data?.[0]?.component_set?.[2]?.manufacturer}</td>
+            <td>{data?.data?.[0]?.component_set?.[2]?.quantity}</td>
             <td></td>
             <td></td>
             <td>
@@ -179,7 +199,11 @@ const Tables = () => {
             <td></td>
           </tr>
 
-          <tr>
+          <tr
+            data-toggle="collapse"
+            data-target=".multi-collapse2"
+            aria-controls="multiCollapseExample2"
+          >
             <td className="d-flex align-items-center">
               <div
                 style={{
@@ -196,20 +220,104 @@ const Tables = () => {
               </div>
               <div>
                 <div className="title">Bracket</div>
-                <div className="subtitle">Created 3 months ago, 5.02.2021</div>
+                <div className="subtitle">{`Created ${Math.round(
+                  milsec / 86400000
+                )} days ago, ${new Date(
+                  data?.data?.[2]?.create_date
+                ).toLocaleDateString()}`}</div>
               </div>
             </td>
-            <td>UP60482</td>
-            <td>V2500</td>
-            <td>Others</td>
-            <td>6</td>
-            <td>Mar 10, 2021</td>
-            <td>Feb 10, 2021</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              {new Date(data?.data?.[2]?.targetdate)
+                .toDateString()
+                .split(" ")
+                .slice(1)
+                .join(" ")}
+            </td>
+            <td>
+              {new Date(data?.data?.[2]?.deadline)
+                .toDateString()
+                .split(" ")
+                .slice(1)
+                .join(" ")}
+            </td>
             <td className="priority">
               <span style={{ backgroundColor: "#F12B2C" }}>high</span>
             </td>
             <td></td>
           </tr>
+
+          <tr className=" collapse multi-collapse2" id="multiCollapseExample2">
+            <td className="d-flex child align-items-center">
+              <div
+                style={{
+                  backgroundColor: "#F1E25C",
+                  padding: "0 10px",
+                  borderRadius: "50%",
+                  color: "white",
+                  fontSize: "1.7rem",
+                  marginRight: "20px",
+                }}
+                className="c"
+              >
+                B
+              </div>
+              <div>
+                <div className=" title">
+                  {data?.data?.[1]?.component_set?.[0]?.component_name}
+                </div>
+                <div className="subtitle"></div>
+              </div>
+            </td>
+            <td>{data?.data?.[1]?.component_set?.[0]?.number}</td>
+
+            <td>{data?.data?.[1]?.component_set?.[0]?.manufacturer}</td>
+            <td>{data?.data?.[1]?.component_set?.[0]?.quantity}</td>
+            <td></td>
+            <td></td>
+            <td>
+              <span></span>
+            </td>
+            <td></td>
+          </tr>
+
+          <tr className=" collapse multi-collapse2" id="multiCollapseExample2">
+            <td className="d-flex child align-items-center">
+              <div
+                style={{
+                  backgroundColor: "#F28D8D",
+                  padding: "0 10px",
+                  borderRadius: "50%",
+                  color: "white",
+                  fontSize: "1.7rem",
+                  marginRight: "20px",
+                }}
+                className="c"
+              >
+                B
+              </div>
+              <div>
+                <div className=" title">
+                  {data?.data?.[1]?.component_set?.[1]?.component_name}
+                </div>
+                <div className="subtitle"></div>
+              </div>
+            </td>
+            <td>{data?.data?.[1]?.component_set?.[1]?.number}</td>
+
+            <td>{data?.data?.[1]?.component_set?.[1]?.manufacturer}</td>
+            <td>{data?.data?.[1]?.component_set?.[1]?.quantity}</td>
+            <td></td>
+            <td></td>
+            <td>
+              <span></span>
+            </td>
+            <td></td>
+          </tr>
+
           <tr>
             <td className="d-flex align-items-center">
               <div
@@ -226,16 +334,33 @@ const Tables = () => {
                 P
               </div>
               <div>
-                <div className="title">Hydraulic Check Valve</div>
-                <div className="subtitle">Created 8 months ago, 5.02.2020</div>
+                <div className="title">
+                  {data?.data?.[2]?.component_set?.[0]?.component_name}
+                </div>
+                <div className="subtitle">{`Created ${Math.round(
+                  milsec / 86400000
+                )} days ago, ${new Date(
+                  data?.data?.[3]?.create_date
+                ).toLocaleDateString()}`}</div>
               </div>
             </td>
-            <td>RR37100D</td>
-            <td>S270T252-7</td>
-            <td>Others</td>
-            <td>9</td>
-            <td>Feb 26, 2021</td>
-            <td>Jan 26, 2021</td>
+            <td>{data?.data?.[1]?.component_set?.[2]?.number}</td>
+            <td>{data?.data?.[2]?.component_set?.[0]?.manufacturer}</td>
+            <td>{data?.data?.[2]?.component_set?.[0]?.quantity}</td>
+            <td>
+              {new Date(data?.data?.[3]?.targetdate)
+                .toDateString()
+                .split(" ")
+                .slice(1)
+                .join(" ")}
+            </td>
+            <td>
+              {new Date(data?.data?.[3]?.deadline)
+                .toDateString()
+                .split(" ")
+                .slice(1)
+                .join(" ")}
+            </td>
             <td className="priority">
               <span>completed</span>
             </td>
@@ -257,16 +382,33 @@ const Tables = () => {
                 P
               </div>
               <div>
-                <div className="title">Sensor, Temp Oil</div>
-                <div className="subtitle">Created 1 year ago, 5.02.2020</div>
+                <div className="title">
+                  {data?.data?.[3]?.component_set?.[0]?.component_name}
+                </div>
+                <div className="subtitle">{`Created ${Math.round(
+                  milsec / 86400000
+                )} days ago, ${new Date(
+                  data?.data?.[4]?.create_date
+                ).toLocaleDateString()}`}</div>
               </div>
             </td>
-            <td>RP221-00</td>
-            <td>CFM56-7</td>
-            <td>Auxitrol</td>
-            <td>3</td>
-            <td>Jan 13, 2021</td>
-            <td>Dec 16, 2020</td>
+            <td>{data?.data?.[2]?.component_set?.[0]?.number}</td>
+            <td>{data?.data?.[3]?.component_set?.[0]?.manufacturer}</td>
+            <td>{data?.data?.[3]?.component_set?.[0]?.quantity}</td>
+            <td>
+              {new Date(data?.data?.[4]?.target)
+                .toDateString()
+                .split(" ")
+                .slice(1)
+                .join(" ")}
+            </td>
+            <td>
+              {new Date(data?.data?.[4]?.deadline)
+                .toDateString()
+                .split(" ")
+                .slice(1)
+                .join(" ")}
+            </td>
             <td className="priority">
               <span>completed</span>
             </td>
@@ -288,16 +430,33 @@ const Tables = () => {
                 P
               </div>
               <div>
-                <div className="title">Sensor, Temp Oil</div>
-                <div className="subtitle">Created 1 year ago, 5.02.2020</div>
+                <div className="title">
+                  {data?.data?.[4]?.component_set?.[0]?.component_name}
+                </div>
+                <div className="subtitle">{`Created ${Math.round(
+                  milsec / 86400000
+                )} days ago, ${new Date(
+                  data?.data?.[5]?.create_date
+                ).toLocaleDateString()}`}</div>
               </div>
             </td>
-            <td>RP221-00</td>
-            <td>CFM56-7</td>
-            <td>Auxitrol</td>
-            <td>3</td>
-            <td>Dec 05, 2020</td>
-            <td>Nov 27, 2020</td>
+            <td>{data?.data?.[2]?.component_set?.[1]?.number}</td>
+            <td>{data?.data?.[4]?.component_set?.[0]?.manufacturer}</td>
+            <td>{data?.data?.[4]?.component_set?.[0]?.quantity}</td>
+            <td>
+              {new Date(data?.data?.[5]?.targetdate)
+                .toDateString()
+                .split(" ")
+                .slice(1)
+                .join(" ")}
+            </td>
+            <td>
+              {new Date(data?.data?.[5]?.deadline)
+                .toDateString()
+                .split(" ")
+                .slice(1)
+                .join(" ")}
+            </td>
             <td className="priority">
               <span>completed</span>
             </td>
@@ -319,16 +478,33 @@ const Tables = () => {
                 P
               </div>
               <div>
-                <div className="title">Sensor, Temp Oil</div>
-                <div className="subtitle">Created 1 year ago, 5.02.2020</div>
+                <div className="title">
+                  {data?.data?.[5]?.component_set?.[0]?.component_name}
+                </div>
+                <div className="subtitle">{`Created ${Math.round(
+                  milsec / 86400000
+                )} days ago, ${new Date(
+                  data?.data?.[6]?.create_date
+                ).toLocaleDateString()}`}</div>
               </div>
             </td>
-            <td>RP221-00</td>
-            <td>CFM56-7</td>
-            <td>Auxitrol</td>
-            <td>3</td>
-            <td>Nov 21, 2020</td>
-            <td>Apr 26, 2020</td>
+            <td>{data?.data?.[2]?.component_set?.[2]?.number}</td>
+            <td>{data?.data?.[5]?.component_set?.[0]?.manufacturer}</td>
+            <td>{data?.data?.[5]?.component_set?.[0]?.quantity}</td>
+            <td>
+              {new Date(data?.data?.[6]?.targetdate)
+                .toDateString()
+                .split(" ")
+                .slice(1)
+                .join(" ")}
+            </td>
+            <td>
+              {new Date(data?.data?.[6]?.deadline)
+                .toDateString()
+                .split(" ")
+                .slice(1)
+                .join(" ")}
+            </td>
             <td className="priority">
               <span>completed</span>
             </td>

@@ -28,7 +28,7 @@ const Topcard = styled.div`
   }
 `;
 
-const Main = () => {
+const Main = ({ data }) => {
   const { small } = useContext(MainContext);
   return (
     <div
@@ -60,7 +60,7 @@ const Main = () => {
                 Filter
               </span>
             </Topcard>
-            <Tables />
+            <Tables data={data} />
           </div>
         </Tab>
         <Tab

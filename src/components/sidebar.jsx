@@ -8,6 +8,8 @@ import vendors from "../assets/vendors.svg";
 import operators from "../assets/operators.svg";
 import help from "../assets/help.svg";
 import toggle from "../assets/toggle.svg";
+import logout from "../assets/logout.svg";
+import { withRouter } from "react-router";
 
 const StyledCol = styled(Col)`
   span {
@@ -15,7 +17,7 @@ const StyledCol = styled(Col)`
   }
 `;
 
-const Sidebar = (props) => {
+const Sidebar = ({ history }) => {
   const [compact, setCompact] = useState(0);
 
   const { small, setSmall } = useContext(MainContext);
@@ -82,9 +84,20 @@ const Sidebar = (props) => {
           <img alt="icon" className="mr-3" width="16px" src={help} />{" "}
           <span>Help</span>
         </StyledCol>
+        <StyledCol
+          onClick={() => {
+            localStorage.removeItem("access");
+            history.push("/");
+          }}
+          compact={compact}
+          className="border-bottom py-3 border-secondary"
+        >
+          <img alt="icon" className="mr-3" width="16px" src={logout} />{" "}
+          <span>Logout</span>
+        </StyledCol>
       </Col>
     </>
   );
 };
 
-export default Sidebar;
+export default withRouter(Sidebar);

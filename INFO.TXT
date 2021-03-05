@@ -1,0 +1,12 @@
+https://workindipl.herokuapp.com/login/  postrequest no auth needed
+
+mail: test1@indiplanes.com
+password: adminindi
+
+https://workindipl.herokuapp.com/listofrfq/  getrequest bearer token header
+
+('PRT' IS PRIORITY) (AOG IS AOG) (NOR IS NORMAL)
+
+(P IS PARTS) (C IS CONSUMABLES)
+
+WHATSAPP NUMBER 9406262377
