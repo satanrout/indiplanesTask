@@ -13,6 +13,7 @@ const Contain = styled.div`
 const HomePage = ({ history }) => {
   const [data, setData] = useState({});
   const access_token = localStorage.getItem("access");
+  console.log(data);
   if (!access_token) {
     history.push("/login");
   }
